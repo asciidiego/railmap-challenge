@@ -12,7 +12,7 @@ function ttpMapComponent($http, mapboxglMapsData) {
     let $ctrl = this;
 
     $ctrl.$onInit = function () {
-        $ctrl.styleUrl = 'data/style/style.json';
+        $ctrl.styleUrl = 'mapbox://styles/vipermu/cjmx8a314d8xk2rlcnu6h2gu9';
         $ctrl.glControls = {
             geolocate: {
                 enabled: true,
