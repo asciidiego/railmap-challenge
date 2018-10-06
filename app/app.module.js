@@ -29,10 +29,10 @@ SvgMapController.$inject = [];
 function SvgMapController() {
     let $ctrl = this;
     $ctrl.zoomIn = function () {
-        d3.select('#staticMap')
-            .attr('transform', 'translate(-3em, -1em)')
-            .transition()
-            .duration(1500)
-            .attr('transform', 'scale(2)');
+        // d3.select('#staticMap')
+        //     .attr('transform', 'scale(5)')
+        //     .transition()
+        //     .duration(1500)
+        //     .attr('transform', 'scale(2)');
     };
 }
