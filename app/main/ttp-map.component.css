@@ -1,0 +1,9 @@
+.main-container {
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.map-container {
+     height: 1000px;
+}

@@ -1,0 +1,11 @@
+1. CB_BCN  -  Liniea de CB Bici i Itineraris Ciclables amb característiques
+
+2. Aparcaments_Bici_U  ---- Aparcaments per bici en superficie en U
+
+3. Estacions_Bicing   --- punts de estacions de Bicing
+
+4. Estacions_Bicing_i_u  --- punts de estacions de Bicing i u en superficies (2+3)
+
+5. Parking Soterrrats2 Caracteristiques i tipus de vehicles que es poden estacionar
+
+6. Pendents_vials  ---- Pednents d tots els eixos viaris de tots els munisicips l'AMB

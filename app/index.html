@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TheTravellingMapp</title>
+    <!--Dependencies-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-simple-logger/dist/angular-simple-logger.js"></script>
+
+    <!--MapboxGL-->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css">
+    <link rel="stylesheet"
+          href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/angular-mapboxgl-directive/0.43.2/angular-mapboxgl-directive.min.css">
+
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-mapboxgl-directive/0.43.2/angular-mapboxgl-directive.min.js"></script>
+
+
+    <script src="node_modules/leaflet/dist/leaflet.js"></script>
+    <script src="node_modules/ui-leaflet/dist/ui-leaflet.js"></script>
+
+
+    <!--Utilities-->
+    <script src="main/L.LatLng.UTM.js"></script>
+
+    <!-- Custom code -->
+    <link rel="stylesheet" href="main/ttp-map.component.css">
+    <script src="app.module.js"></script>
+    <script src="main/ttp-map.component.js"></script>
+</head>
+<body ng-app="mainApp">
+<ttp-map></ttp-map>
+</body>
+</html>
