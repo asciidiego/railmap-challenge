@@ -15,7 +15,7 @@
     <script src="node_modules/angular-simple-logger/dist/angular-simple-logger.js"></script>
 
     <!--MapboxGL-->
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet'/>
     <link rel="stylesheet" href="node_modules/mapbox-gl/dist/mapbox-gl.css">
     <!--<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css">-->
     <link rel="stylesheet"
@@ -44,13 +44,19 @@
 </head>
 <body ng-app="mainApp">
 <!--<ttp-map></ttp-map>-->
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
+<nav class="navbar navbar-inverse navbar-fixed-bottom" style="box-shadow: 0px 12px 62px #000000; border: none">
     <ul class="nav navbar-nav">
         <li style="padding-left: 3em;">
-            <a ui-sref="default" ui-sref-active="active">App</a>
+            <a ui-sref="default" ui-sref-active="active">
+                <!--XD-->
+                <img src="data/map-location-02.svg" width="30em">
+            </a>
         </li>
         <li>
-            <a ui-sref="schematic" ui-sref-active="active">Map</a>
+            <a ui-sref="schematic" ui-sref-active="active">
+                <!--XD-->
+                <img src="data/map-location-01.svg" width="30em">
+            </a>
         </li>
     </ul>
 </nav>
