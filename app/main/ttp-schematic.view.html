@@ -1,3 +1,5 @@
-<div>
-    <img ng-pinch-zoom src="data/metro-05.svg" max-scale="4">
+<div ng-controller="SvgMapController as $ctrl">
+    <div>
+        <img id="staticMap" ng-pinch-zoom src="data/metro-05.svg" max-scale="4" ng-init="$ctrl.zoomIn()">
+    </div>
 </div>

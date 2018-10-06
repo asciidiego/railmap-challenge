@@ -21,4 +21,18 @@ angular.module('mainApp', ['ui-leaflet', 'mapboxgl-directive', 'ui.router', 'ngP
 
         $stateProvider.state(mainState);
         $stateProvider.state(svgState);
-    });
+    })
+    .controller('SvgMapController', SvgMapController)
+
+SvgMapController.$inject = [];
+
+function SvgMapController() {
+    let $ctrl = this;
+    $ctrl.zoomIn = function () {
+        d3.select('#staticMap')
+            .attr('transform', 'translate(-3em, -1em)')
+            .transition()
+            .duration(1500)
+            .attr('transform', 'scale(2)');
+    };
+}

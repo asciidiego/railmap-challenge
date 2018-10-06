@@ -161,8 +161,11 @@ function ttpMapComponent($http, mapboxglMapsData, $scope) {
             if (bikeStreetNumber != null) {
                 bikeInfo = bikeStreet + ', ' + bikeStreetNumber;
             } else bikeInfo = bikeStreet;
-            popup.setHTML('<h3>' + bikeStatus + '</h3>' +
+            popup.setHTML('<h3>Bicing' + bikeStatus + '</h3>' +
                 '<h4>' + bikeInfo + '</h4>')
+                .addTo($ctrl.map);
+        } else if (currentFeature.properties.wheelchair_boarding != null) {
+            popup.setHTML('<b>Accés PMR disponible</b>')
                 .addTo($ctrl.map);
         } else {
             popup.setHTML('<h3>' + currentFeature.properties.Xarxa + " " + currentFeature.properties.NOM_ESTACI + '</h3>' +
