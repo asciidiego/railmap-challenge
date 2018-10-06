@@ -9,9 +9,10 @@
     <!--gl-zoom="{ value: 1 }"-->
     <!--&gt;</mapboxgl>-->
 
-    <mapboxgl gl-style="$ctrl[$ctrl.defaultURL]"
-              gl-controls="$ctrl.glControls"
+    <mapboxgl height="100vh"
+              gl-sources="$ctrl.glSources"
               gl-layers="$ctrl.glLayers"
-              height="100vh"
+              gl-style="$ctrl.glStyle"
+              gl-controls="$ctrl.glControls"
     ></mapboxgl>
 </div>
