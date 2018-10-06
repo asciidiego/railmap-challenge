@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.module.js",
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.20",
     "angular": "^1.7.5",
+    "angular-hammer": "^2.2.0",
     "angular-mapboxgl-directive": "^0.46.0",
     "angular-simple-logger": "^0.1.7",
     "bootstrap": "^3.3.7",

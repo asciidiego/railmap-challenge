@@ -10,13 +10,9 @@ ttpMapComponent.$inject = ['$http', 'mapboxglMapsData'];
 function ttpMapComponent($http, mapboxglMapsData) {
     // Nothing here!
     let $ctrl = this;
-    $ctrl.defaultURL = 'bicingStyleURL2';
-    $ctrl.bicingStyleURL = 'mapbox://styles/vipermu/cjmwf4b777c2x2snxvhcqn55y';
-    $ctrl.bicingStyleURL2 = 'mapbox://styles/vipermu/cjmx2tgp11a5p2rqzhnevkz9c';
-    $ctrl.publicTransportStyleURL = 'mapbox://styles/vipermu/cjmx2mr0043so2smtwjj13sul';
-    $ctrl.altUrl = 'mapbox://styles/vipermu/cjmx2mr0043so2smtwjj13sul';
 
     $ctrl.$onInit = function () {
+        $ctrl.styleUrl = 'data/style/style.json';
         $ctrl.glControls = {
             geolocate: {
                 enabled: true,
@@ -38,82 +34,83 @@ function ttpMapComponent($http, mapboxglMapsData) {
                 }
             }
         };
-        $ctrl.glSources = {
-            "tPublicSource": {
-                "type": "vector",
-                "url": $ctrl.publicTransportStyleURL
-            }
-        };
-        $ctrl.glLayers = [
-            {
-                "id": "tpublic",
-                "source": "tPublicSource",
-                "source-layer": "tPublicLayer",
-                "type": "symbol",
-                "paint": {
-                    "fill-color": "#00ffff",
-                    "text-field": "HELLO"
-                },
-                "events": {
-                    onClick: function (map, feature, features) {
-                        // Here, you have the feature clicked
-                        let popUps = document.getElementsByClassName('mapboxgl-popup');
-                        // Check if there is already a popup on the map and if so, remove it
-                        if (popUps[0]) popUps[0].remove();
-                        let popup = new mapboxgl.Popup({closeOnClick: true})
-                            .setLngLat(feature.geometry.coordinates)
-                            .setHTML(
-                                '<h4>' + feature.properties.NOM_ESTACI + '</h4>' +
-                                '<p><b>Linea: </b>' + feature.properties.Linia + '</p>' +
-                                '<p><b>Intercanvis: </b>' + feature.properties.INTERCANVI + '</p>'
-                            )
-                            .addTo(map);
 
-                        // Fly to clicked point!
-
-                        map.flyTo({
-                            center: feature.geometry.coordinates,
-                            zoom: 15
-                        });
-                    },
-                }
-            },
-            {
-                "id": "stations",
-                "source": "tPublicSource",
-                "source-layer": "tPublicLayer",
-                "type": "symbol",
-                "paint": {
-                    "fill-color": "#00ffff",
-                    "text-field": "HELLO"
-                },
-                "events": {
-                    onClick: function (map, feature, features) {
-                        debugger;
-                        // Here, you have the feature clicked
-                        let popUps = document.getElementsByClassName('mapboxgl-popup');
-                        // Check if there is already a popup on the map and if so, remove it
-                        if (popUps[0]) popUps[0].remove();
-                        debugger;
-                        let popup = new mapboxgl.Popup({closeOnClick: true})
-                            .setLngLat(feature.geometry.coordinates)
-                            .setHTML(
-                                '<h4>' + feature.properties.NOM_ESTACI + '</h4>' +
-                                '<p><b>Linea: </b>' + feature.properties.Linia + '</p>' +
-                                '<p><b>Intercanvis: </b>' + feature.properties.INTERCANVI + '</p>'
-                            )
-                            .addTo(map);
-
-                        // Fly to clicked point!
-
-                        map.flyTo({
-                            center: feature.geometry.coordinates,
-                            zoom: 15
-                        });
-                    },
-                }
-            },
-        ];
+        // $ctrl.glSources = {
+        //     "tPublicSource": {
+        //         "type": "vector",
+        //         "url": $ctrl.publicTransportStyleURL
+        //     }
+        // };
+        // $ctrl.glLayers = [
+        //     {
+        //         "id": "tpublic",
+        //         "source": "tPublicSource",
+        //         "source-layer": "tPublicLayer",
+        //         "type": "symbol",
+        //         "paint": {
+        //             "fill-color": "#00ffff",
+        //             "text-field": "HELLO"
+        //         },
+        //         "events": {
+        //             onClick: function (map, feature, features) {
+        //                 // Here, you have the feature clicked
+        //                 let popUps = document.getElementsByClassName('mapboxgl-popup');
+        //                 // Check if there is already a popup on the map and if so, remove it
+        //                 if (popUps[0]) popUps[0].remove();
+        //                 let popup = new mapboxgl.Popup({closeOnClick: true})
+        //                     .setLngLat(feature.geometry.coordinates)
+        //                     .setHTML(
+        //                         '<h4>' + feature.properties.NOM_ESTACI + '</h4>' +
+        //                         '<p><b>Linea: </b>' + feature.properties.Linia + '</p>' +
+        //                         '<p><b>Intercanvis: </b>' + feature.properties.INTERCANVI + '</p>'
+        //                     )
+        //                     .addTo(map);
+        //
+        //                 // Fly to clicked point!
+        //
+        //                 map.flyTo({
+        //                     center: feature.geometry.coordinates,
+        //                     zoom: 15
+        //                 });
+        //             },
+        //         }
+        //     },
+        //     {
+        //         "id": "stations",
+        //         "source": "tPublicSource",
+        //         "source-layer": "tPublicLayer",
+        //         "type": "symbol",
+        //         "paint": {
+        //             "fill-color": "#00ffff",
+        //             "text-field": "HELLO"
+        //         },
+        //         "events": {
+        //             onClick: function (map, feature, features) {
+        //                 debugger;
+        //                 // Here, you have the feature clicked
+        //                 let popUps = document.getElementsByClassName('mapboxgl-popup');
+        //                 // Check if there is already a popup on the map and if so, remove it
+        //                 if (popUps[0]) popUps[0].remove();
+        //                 debugger;
+        //                 let popup = new mapboxgl.Popup({closeOnClick: true})
+        //                     .setLngLat(feature.geometry.coordinates)
+        //                     .setHTML(
+        //                         '<h4>' + feature.properties.NOM_ESTACI + '</h4>' +
+        //                         '<p><b>Linea: </b>' + feature.properties.Linia + '</p>' +
+        //                         '<p><b>Intercanvis: </b>' + feature.properties.INTERCANVI + '</p>'
+        //                     )
+        //                     .addTo(map);
+        //
+        //                 // Fly to clicked point!
+        //
+        //                 map.flyTo({
+        //                     center: feature.geometry.coordinates,
+        //                     zoom: 15
+        //                 });
+        //             },
+        //         }
+        //     },
+        // ];
 
         // // Add interactivity
         // let map = mapboxglMapsData.getMaps()[0].mapInstance;
